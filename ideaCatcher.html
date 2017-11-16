@@ -5,12 +5,51 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="ideaCatcher.css">
   <script src="ideaCatcher.js"></script>
-
 </head>
 
 <body>
-  <button type="button" class="button" style="background-color: #d3d3d3;">Record Audio<img class="icon" src="microphone.png"/></button>
+  <a href="post-it.html"><button type="button" class="button" style="background-color: #d3d3d3;">Record Audio<img class="icon" src="microphone.png"/></button></a>
   <button type="button" class="button" style="background-color: #d3d3d3;">Generate Post it Notes<img class="icon" src="post-it.png"/></button>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Text')">Text</button>
+    <button class="tablinks" onclick="openTab(event, 'Ideas')">Ideas</button>
+  </div>
+
+  <div id="Text" class="tabcontent">
+    <p>
+      Speaker 1: So the problem we’re trying to tackle is how can we make students stay awake during class? <br>
+      <br>
+      Speaker 2: Currently students will consume coffee or tea to stay awake. <br>
+      <br>
+      Speaker 1: They’ll also exercise or meditate. <br>
+      <br>
+      Speaker 2: A lot of these products are costly. <br>
+      <br>
+      Speaker 1: And activities also take up additional time. <br>
+      <br>
+      Speaker 2: Right, so we should try to come up with a solution that doesn’t cost a lot and doesn’t take up a lot of time. <br>
+      <br>
+      Speaker 1: Here’s an idea: a buddy system where students would pump up one another. Done <br>
+      <br>
+      Speaker 2: Another idea: teachers lead a light physical activity every twenty minutes. Done <br>
+      <br>
+      Speaker 1: Yeah I really like that because I get tired during different times in class. <br>
+      <br>
+      Speaker 2: Idea. Have a short meditation session at the beginning of class so students are more alert Done.
+    </p>
+  </div>
+
+  <div id="Ideas" class="tabcontent">
+    <p>
+      Idea: A buddy system where students would pump up one another.<br>
+      <br>
+      Idea: Teachers lead a light physical activity every twenty minutes.<br>
+      <br>
+      Idea: Have a short meditation session at the beginning of class so students are more alert<br>
+      <br>
+    </p>
+  </div>
 
 </body>
 </html>
