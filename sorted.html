@@ -7,40 +7,96 @@
 </head>
 
 <body>
-  <button class="button" style="background-color: #d3d3d3; margin-left: 3%;" >Peer System</button>
-  <button class="button" style="background-color: #d3d3d3; margin-left: 1%;" >Physical Activity</button>
-  <button class="button" style="background-color: #d3d3d3; margin-left: 1%;" >Mindfulness</button>
-  <button class="button" style="background-color: #d3d3d3; margin-left: 1%;" >Brainfood</button>
+    <button class="button"
+            style="background-color: #d3d3d3; margin-left: 3%;"
+            onclick="playTunes('peerSystem')" >
+            Peer System
+    </button>
+    <button class="button"
+            style="background-color: #d3d3d3; margin-left: 3%;"
+            onclick="playTunes('physicalActivity')" >
+            Physical Activity
+    </button>
+    <button class="button"
+            style="background-color: #d3d3d3; margin-left: 3%;"
+            onclick="playTunes('mindfulness')" >
+            Mindfulness
+    </button>
+    <button class="button"
+            style="background-color: #d3d3d3; margin-left: 3%;"
+            onclick="playTunes('brainfood')" >
+            Brainfood
+    </button>
 
     <div id='frame'>
         <a class="note sticky3">
+            <audio class='peerSystem'>
+                <source src="./audio/BuddySystem.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>A <b>buddy</b> system where students would pump up one another.</div>
         </a>
         <a class="note sticky2">
+            <audio class='physicalActivity'>
+                <source src="./audio/TeachersLead.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Teachers lead a light <b>physical activity</b> every twenty minutes.</div>
         </a>
         <a class="note sticky1">
+            <audio class='mindfulness'>
+                <source src="./audio/MeditationSession.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Have a short <b>meditation</b> session at the beginning of class so students are more <b>alert</b></div>
         </a>
         <a class="note sticky">
+            <audio class='brainfood'>
+                <source src="./audio/Brainfood.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Teachers provide <b>healthy brainfood snacks</b> to students such as blueberries or mint gum.</div>
         </a>
         <a class="note sticky3">
+            <audio class='peerSystem'>
+                <source src="./audio/TeachersInclude.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Teacher's include a daily <b>partner</b> projects as a part of their curriculum.</div>
         </a>
         <a class="note sticky2">
+            <audio class='physicalActivity'>
+                <source src="./audio/InteractiveActivity.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Teacher's include group <b>interactive activities</b> during class which allow the students to <b>move</b> around a bit.</div>
         </a>
         <a class="note sticky1">
+            <audio class='mindfulness'>
+                <source src="./audio/FidgetSpinners.mp3" type="audio/mp3"></source>
+            </audio>
             <div class='pin'></div>
             <div class='text'>Students bring fidget spinners to class to keep students <b>focused</b> and <b>calm</b>.</div>
         </a>
     </div>
-    </body>
-    </html>
+
+    <script>
+        function playTunes(className) {
+            var postits = document.getElementsByClassName(className);
+            var i = 0;
+            while(i < postits.length) {
+                playSound(postits[i], function () {
+                    i++;
+                });
+            }
+        }
+
+        function playSound(postit, nextSound) {
+            postit.play()
+            if (postit.paused) {
+                nextSound();
+            }
+        }
+    </script>
+</body>
+</html>
