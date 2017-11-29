@@ -17,6 +17,10 @@ div#frame {
     border: 1px solid rgba(0,0,0,.1);
 }
 
+.sticky {
+  background-color: #c1fcc1;
+}
+
 .sticky1 {
     background-color: #ffd3d9;
 }
@@ -42,8 +46,9 @@ div#frame a:hover.note {
 
 .button {
     border: none;
+    width: 12%;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 14px;
     text-align: center;
     text-decoration: none;
     font-size: 20px;
