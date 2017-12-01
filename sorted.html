@@ -9,7 +9,7 @@
 <body>
     <button class="button"
             style="background-color: #d3d3d3; margin-left: 3%;"
-            onclick="playTunes('peerSystem')" >
+            onclick="playTunes('peerSystem', 0)" >
             Peer System
     </button>
     <button class="button"
@@ -83,18 +83,18 @@
     <script>
         function playTunes(className) {
             var postits = document.getElementsByClassName(className);
+            var chord = new Audio('./audio/' + className + 'Chord.mp3');
             var i = 0;
-            while(i < postits.length) {
-                playSound(postits[i], function () {
-                    i++;
-                });
+            chord.play();
+            chord.onended = function() {
+                if(i < postits.length) {
+                    postits[i].play();
+                }
             }
-        }
 
-        function playSound(postit, nextSound) {
-            postit.play()
-            if (postit.paused) {
-                nextSound();
+            postits[i].onended = function() {
+                i++;
+                chord.play()
             }
         }
     </script>
